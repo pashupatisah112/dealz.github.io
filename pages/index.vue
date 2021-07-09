@@ -29,7 +29,7 @@ export default {
   background-image: url("~static/landing-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 1020px;
+  height: 1080px;
   @media (max-width: 1920px) {
     height: auto;
   }

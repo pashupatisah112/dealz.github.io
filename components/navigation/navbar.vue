@@ -2,7 +2,7 @@
   <div>
     <b-navbar toggleable="lg">
       <b-container>
-        <b-navbar-brand href="#" class="logo">Dealz</b-navbar-brand>
+        <b-navbar-brand href="#" class="logo"><b-img src="/logo.png" width="180px" /></b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
