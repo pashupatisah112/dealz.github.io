@@ -1,3 +1,5 @@
+@import "./toast.scss";
+
 @mixin gradient-text {
     background: -webkit-linear-gradient(left, #04A5F6, #28EEA1);
     -webkit-background-clip: text;

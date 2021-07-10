@@ -1,14 +1,19 @@
 <template>
   <div class="position-relative main-btn">
     <div :class="`button ${type}`">
-      <div>{{ text }}</div>
+      <b-spinner v-if="loading" />
+      <div v-else>{{ text }}</div>
     </div>
     <div class="position-absolute back-button"></div>
   </div>
 </template>
 
 <script>
+import { BSpinner } from "bootstrap-vue";
 export default {
+  components: {
+    BSpinner,
+  },
   props: {
     text: {
       type: String,
@@ -17,6 +22,10 @@ export default {
     type: {
       type: String,
       default: () => "",
+    },
+    loading: {
+      type: Boolean,
+      default: () => false,
     },
   },
 };
