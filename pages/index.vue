@@ -7,16 +7,12 @@
 </template>
 
 <script>
-import { BCol, BContainer } from "bootstrap-vue";
-
 import Navbar from "../components/navigation/navbar.vue";
 import Header from "../components/landing/header.vue";
 import Footer from "../components/navigation/footer.vue";
 
 export default {
   components: {
-    BCol,
-    BContainer,
     Navbar,
     Header,
     Footer,

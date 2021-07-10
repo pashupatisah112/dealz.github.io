@@ -9,14 +9,33 @@
           Negotiate and generate unbiased legal agreements safely and securely
           without an attorney.
         </div>
-        <b-row class="mt-5">
-          <b-col md="12" xl="8">
-            <custom-input header="Your Email Address" />
-          </b-col>
-          <b-col md="12" xl="4" class="mt-sm-3 mt-xl-0">
-            <custom-button text="Request Invite" type="primary" />
-          </b-col>
-        </b-row>
+        <ValidationObserver ref="manualTestForm">
+          <b-row class="mt-5">
+            <b-col md="12" xl="8">
+              <ValidationProvider
+                v-slot="{ errors }"
+                rules="required|email"
+                class="w-100"
+              >
+                <custom-input
+                  header="Your Email Address"
+                  v-model="email"
+                  :error="!!errors[0]"
+                  placeholder="Your Email Address"
+                />
+                <span class="text-danger">{{ errors[0] }}</span>
+              </ValidationProvider>
+            </b-col>
+            <b-col md="12" xl="4" class="mt-sm-3 mt-xl-0">
+              <custom-button
+                text="Request Invite"
+                type="primary"
+                :loading="isProcessing"
+                @click.native="submitEmail"
+              />
+            </b-col>
+          </b-row>
+        </ValidationObserver>
         <div class="mt-2 class text-muted info-text">
           Your data is secure. We won’t send spam or sell it to third parties.
         </div>
@@ -33,6 +52,21 @@ import { BContainer, BRow, BCol, BImg } from "bootstrap-vue";
 import CustomButton from "../button/custom-button.vue";
 import CustomInput from "../input/custom-input.vue";
 
+import { ValidationProvider, ValidationObserver, extend } from "vee-validate";
+import { required, email } from "vee-validate/dist/rules";
+
+import ApiService from "@/services/index.js";
+
+extend("required", {
+  ...required,
+  message: "This field is required",
+});
+
+extend("email", {
+  ...email,
+  message: "This field must be a valid email",
+});
+
 export default {
   components: {
     BContainer,
@@ -40,8 +74,35 @@ export default {
     BCol,
     BImg,
     CustomButton,
-    CustomInput
-  }
+    CustomInput,
+    ValidationObserver,
+    ValidationProvider,
+  },
+  data: () => ({
+    email: null,
+    isProcessing: false,
+  }),
+  methods: {
+    submitEmail() {
+      this.$refs.manualTestForm.validate().then((response) => {
+        if (!response) {
+          return;
+        } else {
+          this.isProcessing = true;
+          ApiService.submitEmail(this.email)
+            .then((res) => {
+              this.successToast("Thank you. We recieved your invitation request")
+            })
+            .catch(() => {
+              this.failureToast("Sorry! We couldn't send an invitation");
+            })
+            .finally(() => {
+              this.isProcessing = false;
+            });
+        }
+      });
+    },
+  },
 };
 </script>
 

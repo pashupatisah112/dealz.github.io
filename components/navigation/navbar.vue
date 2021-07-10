@@ -2,9 +2,7 @@
   <div>
     <b-navbar toggleable="lg">
       <b-container>
-        <b-navbar-brand href="#" class="logo"
-          ><b-img src="/logo.png" width="180px"
-        /></b-navbar-brand>
+        <b-navbar-brand href="#" class="logo"><b-img src="/logo.png" width="180px" /></b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -31,7 +29,7 @@ import {
   BCollapse,
   BNavbarNav,
   BNavItemDropdown,
-  BDropdownItem
+  BDropdownItem,
 } from "bootstrap-vue";
 import CustomButton from "../button/custom-button.vue";
 
@@ -43,8 +41,8 @@ export default {
     BNavbarNav,
     BNavItemDropdown,
     BDropdownItem,
-    CustomButton
-  }
+    CustomButton,
+  },
 };
 </script>
 

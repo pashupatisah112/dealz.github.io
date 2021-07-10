@@ -1,5 +1,10 @@
 <template>
-  <input :placeholder="placeholder" />
+  <input
+    :placeholder="placeholder"
+    v-model="value"
+    @input="$emit('input', value)"
+    :class="`${error ? 'error': ''}`"
+  />
 </template>
 
 <script>
@@ -7,9 +12,16 @@ export default {
   props: {
     placeholder: {
       type: String,
-      default: () => ""
-    }
-  }
+      default: () => "",
+    },
+    error: {
+      type: Boolean,
+      default: () => "",
+    },
+  },
+  data: () => ({
+    value: null,
+  }),
 };
 </script>
 
@@ -23,5 +35,8 @@ input {
   &:focus {
     outline: none;
   }
+}
+.error {
+  border: 2px solid $danger;
 }
 </style>
