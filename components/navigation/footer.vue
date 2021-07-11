@@ -7,12 +7,7 @@
         agreement templates, legal task bots, and deal negotiation dApps.
       </div>
       <div class="ml-sm-0 ml-lg-auto mt-sm-4 mt-lg-0">
-        <div class="links">
-          <nuxt-link to="#">About</nuxt-link>
-          <nuxt-link to="#">Privacy</nuxt-link>
-          <nuxt-link to="#">Terms</nuxt-link>
-          <nuxt-link to="#">Contact</nuxt-link>
-        </div>
+        
         <div class="copyright-text">
           Copyright Dealz 2021. All Rights Reserved.
         </div>
