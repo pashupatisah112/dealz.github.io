@@ -20,9 +20,13 @@
                 <custom-input
                   header="Your Email Address"
                   v-model="email"
+                  ref="email"
                   :error="!!errors[0]"
                   placeholder="Your Email Address"
                 />
+                <span class="text-danger" v-if="navBtnClicked"
+                  >Please input the email for Registration/Request Invite</span
+                >
                 <span class="text-danger">{{ errors[0] }}</span>
               </ValidationProvider>
             </b-col>
@@ -78,12 +82,32 @@ export default {
     ValidationObserver,
     ValidationProvider,
   },
+  props: {
+    errorCount: {
+      type: Number,
+      default: () => 0,
+    },
+  },
   data: () => ({
     email: null,
     isProcessing: false,
+    navBtnClicked: false,
   }),
+  watch: {
+    email(value) {
+      if (value) this.navBtnClicked = false;
+    },
+    errorCount(value, previousValue) {
+      if (value > previousValue) {
+        this.$refs.manualTestForm.reset();
+        this.navBtnClicked = true;
+      }
+      this.$refs.email.$el.focus();
+    },
+  },
   methods: {
     submitEmail() {
+      this.navBtnClicked = false;
       this.$refs.manualTestForm.validate().then((response) => {
         if (!response) {
           return;
@@ -91,7 +115,9 @@ export default {
           this.isProcessing = true;
           ApiService.submitEmail(this.email)
             .then((res) => {
-              this.successToast("Thank you. We recieved your invitation request")
+              this.successToast(
+                "Thank you. We recieved your invitation request"
+              );
             })
             .catch(() => {
               this.failureToast("Sorry! We couldn't send an invitation");

@@ -1,7 +1,7 @@
 <template>
   <div class="landing">
-    <Navbar />
-    <Header />
+    <Navbar @click="errorCount += 1" />
+    <Header :errorCount="errorCount" />
     <Footer />
   </div>
 </template>
@@ -12,6 +12,9 @@ import Header from "../components/landing/header.vue";
 import Footer from "../components/navigation/footer.vue";
 
 export default {
+  data: () => ({
+    errorCount: 0,
+  }),
   components: {
     Navbar,
     Header,
