@@ -12,7 +12,7 @@
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto">
             <custom-button
-              text="Attorney General"
+              text="Attorney Registration"
               type="primary"
               class="mx-3"
               @click.native="$emit('click')"
