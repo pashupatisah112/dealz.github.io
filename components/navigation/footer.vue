@@ -1,22 +1,22 @@
 <template>
-  <div class="container">
-    <b-row class="mx-sm-2">
-      <div class="col-sm-12 col-md-7 col-md-6 footer-text px-0">
+  <div class="container py-4">
+    <b-row>
+      <b-col sm="12" md="7" class="footer-text">
         Dealz DAO is an open source protocol and cryptocurrency leveraging
         decentralized merit based governance to create trustless unbiased
         agreement templates, legal task bots, and deal negotiation dApps.
-      </div>
-      <div class="ml-sm-0 ml-lg-auto mt-sm-4 mt-lg-0">
+      </b-col>
+      <b-col xs="12" md="5" lg="4" class="mt-4 mt-lg-0 footer-right">
         <div class="links">
           <nuxt-link to="#">About</nuxt-link>
           <nuxt-link to="#">Privacy</nuxt-link>
           <nuxt-link to="#">Terms</nuxt-link>
           <nuxt-link to="#">Contact</nuxt-link>
         </div>
-        <div class="copyright-text">
+        <div class="copyright-text mt-2">
           Copyright Dealz 2021. All Rights Reserved.
         </div>
-      </div>
+      </b-col>
     </b-row>
   </div>
 </template>
@@ -41,20 +41,27 @@ export default {
 }
 .links {
   display: flex;
-  gap: 30px;
+  flex-wrap: wrap;
   a {
+    text-align: right;
+    width: 25%;
     color: #6b6b6b;
     font-size: 14px;
     text-decoration: none;
+    @media (max-width: 650px) {
+      text-align: center;
+    }
   }
 }
 .copyright-text {
   color: rgba(17, 17, 17, 0.32);
   font-size: 12px;
-}
-.container {
+  text-align: right;
   @media (max-width: 650px) {
-    papdding: 20px;
+    text-align: center;
   }
+}
+.footer-right {
+  margin-left: auto;
 }
 </style>
