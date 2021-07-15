@@ -5,7 +5,7 @@ export default {
         var config = {
             method: 'post',
             url: `https://v1.nocodeapi.com/dealz/google_sheets/PknBzwtdMILuyQcz?tabId=Sheet1`,
-            data: [['email'], [email]],
+            data: [[''], [email]],
         };
         return Axios(config);
     }
