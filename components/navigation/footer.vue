@@ -7,12 +7,12 @@
         agreement templates, legal task bots, and deal negotiation dApps.
       </b-col>
       <b-col xs="12" md="5" lg="4" class="mt-4 mt-lg-0 footer-right">
-        <div class="links">
+        <!-- <div class="links">
           <nuxt-link to="#">About</nuxt-link>
           <nuxt-link to="#">Privacy</nuxt-link>
           <nuxt-link to="#">Terms</nuxt-link>
           <nuxt-link to="#">Contact</nuxt-link>
-        </div>
+        </div> -->
         <div class="copyright-text mt-2">
           Copyright Dealz 2021. All Rights Reserved.
         </div>
