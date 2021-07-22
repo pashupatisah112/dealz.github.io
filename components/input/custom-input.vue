@@ -31,6 +31,7 @@ input {
   height: 46px;
   padding: 0 15px;
   border: 2px solid #182744;
+  border-radius: 0px !important;
   font-size: 16px;
   &:focus {
     outline: none;

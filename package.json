@@ -10,14 +10,18 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
+    "@nuxtjs/auth-next": "^5.0.0-1624817847.21691f1",
+    "@nuxtjs/axios": "^5.13.6",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.15.1",
     "node-sass": "^6.0.1",
     "nuxt": "^2.15.7",
+    "qs": "^6.10.1",
     "sass-loader": "^10",
-    "vee-validate": "^3.4.10"
+    "vee-validate": "^3.4.10",
+    "vue-ripple-directive": "^2.0.1"
   },
   "devDependencies": {
     "@nuxtjs/style-resources": "^1.2.0"

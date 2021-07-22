@@ -1,7 +1,8 @@
 <template>
-  <div class="landing">
-    <Navbar />
-    <Header />
+  <div class="landing position-relative">
+    <img class="bg-img position-absolute" src="/rectangle-bg.png" />
+    <Navbar @click="errorCount += 1" />
+    <Header :errorCount="errorCount" />
     <Footer />
   </div>
 </template>
@@ -10,8 +11,10 @@
 import Navbar from "../components/navigation/navbar.vue";
 import Header from "../components/landing/header.vue";
 import Footer from "../components/navigation/footer.vue";
-
 export default {
+  data: () => ({
+    errorCount: 0,
+  }),
   components: {
     Navbar,
     Header,
@@ -22,12 +25,15 @@ export default {
 
 <style lang="scss">
 .landing {
-  background-image: url("~static/landing-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
   height: 1080px;
   @media (max-width: 1920px) {
     height: auto;
+  }
+  .bg-img {
+    bottom: 0;
+    right: 0;
   }
 }
 </style>

@@ -1,10 +1,9 @@
 <template>
-  <div class="position-relative main-btn">
+  <div class="main-btn">
     <div :class="`button ${type}`">
       <b-spinner v-if="loading" />
       <div v-else>{{ text }}</div>
     </div>
-    <div class="position-absolute back-button"></div>
   </div>
 </template>
 
@@ -33,17 +32,16 @@ export default {
 
 <style lang="scss">
 .main-btn {
-  border: 2px solid #182744;
-  height: 46px;
   .button {
-    margin: 0 0 4px 4px;
-    height: calc(100% - 4px);
+    height: 46px;
     padding: 0 18px;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.1s ease;
     &:hover {
       cursor: pointer;
+      box-shadow: -4px 4px 1px #182744;
       background: linear-gradient(90deg, #04a5f6, #28eea1);
     }
   }

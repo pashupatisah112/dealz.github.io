@@ -134,8 +134,8 @@ export default {
           .loginWith("local", {
             data: { email: this.email, password: this.password },
           })
-          .then((res) => {
-            this.successToast(response.message);
+          .then((response) => {
+            this.successToast(response.data.message);
           })
           .catch((err) => {
             this.failureToast(err.response.data.message);
