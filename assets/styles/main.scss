@@ -1,0 +1,28 @@
+@import "./toast.scss";
+
+.container {
+    max-width: 1250px;
+    @media (max-width: 1200px) {
+        max-width: 1040px;
+    }
+
+    @media (max-width: 992px) {
+        max-width: 860px;
+    }
+
+    @media (max-width: 768px) {
+        max-width: 700px;
+    }
+
+    @media (max-width: 576px) {
+        max-width: 500px;
+    }
+}
+
+@mixin gradient-text {
+    background: -webkit-linear-gradient(left, #04A5F6, #28EEA1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+$text-light: #6B6B6B;

@@ -1,0 +1,15 @@
+$success: #28c76f;
+$danger: #dc3545;
+
+.b-toast-success {
+  .toast-header {
+    color: white !important;
+    background-color: $success !important;
+  }
+}
+.b-toast-danger {
+  .toast-header {
+    color: white !important;
+    background-color: $danger !important;
+  }
+}
