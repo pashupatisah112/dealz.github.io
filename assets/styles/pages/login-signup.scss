@@ -1,0 +1,17 @@
+a {
+    color: rgba(17, 17, 17, 0.64);
+    font-weight: 900;
+
+    &:hover {
+        cursor: pointer;
+        text-decoration: none;
+        color: rgba(17, 17, 17, 0.64);
+
+    }
+}
+
+.password {
+    input {
+        border-right: 0;
+    }
+}

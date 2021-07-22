@@ -1,0 +1,12 @@
+.btn-primary {
+    background: linear-gradient(90deg, #04A5F6 0%, #28EEA1 100%);
+    border: none;
+    box-shadow: none;
+}
+button {
+    padding: 9px;
+}
+button:focus {
+    outline: none;
+    box-shadow: none !important;
+}

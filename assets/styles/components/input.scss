@@ -1,0 +1,47 @@
+input {
+    border: 1px solid #DFE6EC;
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+
+input[type="password"] {
+    border-right: none;
+}
+
+.form-control {
+    padding: 20px 24px !important;
+}
+
+.form-control:focus,
+.custom-select:focus {
+    background: #EFFFF4;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.08);
+    border: 1px solid #04f6d4;
+}
+
+.form-control.is-invalid:focus, .custom-select.is-invalid:focus {
+    box-shadow: none;
+}
+
+.eye-input {
+    padding: 12px;
+    border: 1px solid #c0c7ce;
+    background: #fff;
+    box-sizing: border-box;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.eye-input.error {
+    border-color: #dc3545;
+}
+
+.custom-select {
+    option {
+        padding: 5px;
+    }
+}

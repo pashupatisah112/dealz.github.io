@@ -1,0 +1,13 @@
+.custom-file {
+    border: 2px dashed #C8D4DF;
+    padding-bottom: 5px;
+    height: calc(1.5em + 0.75rem + 6px);
+
+    .custom-file-label {
+        border: none !important;
+    }
+}
+
+.custom-file-input:focus~.custom-file-label {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(#04f6d4, 0.08);
+}
