@@ -1,0 +1,42 @@
+.mild-back{
+    background-color: #F5F7F9;
+}
+.center-push{
+    margin:0 15%;
+}
+.bot-border{
+    border-bottom:2px solid grey;
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    background-color:transparent;
+}
+.border-bottom {
+    border-bottom: 3px solid #007bff !important;
+    border-radius: 0px !important;
+}
+.line-border{
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+}
+.line-border-top{
+    border-top: 2px solid rgba(0,0,0,0.1);
+}
+.chip{
+    display: inline-block;
+    padding: 0 25px;
+    height: 25px;
+    font-size: 14px;
+    line-height: 25px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+}
+.outlined{
+    border:1px solid rgba(0,0,0,0.2);
+}
+.outlined-primary{
+    border:1px solid #007bff;
+}
+  
+li::marker{
+    color: rgba(0,0,0,0.3);
+    font-size:25px;
+}
